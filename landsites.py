@@ -50,6 +50,12 @@ class Land:
             RandomGen.randint(0, 300),
         )
 
+    def __hash__(self):
+        return hash(self.name)
+
+    def __eq__(self, other):
+        return self.name == other.name if isinstance(other, Land) else False
+
     def get_name(self) -> str:
         return self.name
 
